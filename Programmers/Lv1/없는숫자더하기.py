@@ -4,4 +4,4 @@ def solution(numbers):
     for n in num:
         if n not in numbers:
             answer+=n
-    return answer
+    return answer#==45-sum(numbers)
