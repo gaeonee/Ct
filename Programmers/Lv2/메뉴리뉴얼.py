@@ -2,26 +2,24 @@ from itertools import combinations
 
 def solution(orders, course):
     answer = []
-    order_combinations = [] #orders¹è¿­ÀÇ Áßº¹¾ø´Â Á¶ÇÕÀ» ÀúÀåÇÒ ¸®½ºÆ®
-    order_dict = {} #ÃßÃâµÈ Á¶ÇÕÀ» ÀúÀåÇÒ µñ¼Å³Ê¸®
+    order_combinations = [] #ordersë°°ì—´ì˜ ì¤‘ë³µì—†ëŠ” ì¡°í•©ì„ ì €ìž¥í•  ë¦¬ìŠ¤íŠ¸
+    order_dict = {} #ì¶”ì¶œëœ ì¡°í•©ì„ ì €ìž¥í•  ë”•ì…”ë„ˆë¦¬
 
-    for c in course: #ÄÚ½º[2,3,4]´ë·Î ¼øÂ÷ÀûÀ¸·Î orders Á¶ÇÕÀ» ÃßÃâÇØ ÀúÀåÇÔ
+    for c in course: #ì½”ìŠ¤[2,3,4]ëŒ€ë¡œ ìˆœì°¨ì ìœ¼ë¡œ orders ì¡°í•©ì„ ì¶”ì¶œí•´ ì €ìž¥í•¨
         for order in orders:
-            order_combinations.extend(list(map(''.join, combinations(order,c)))) # append´ë½Å extends¸¦ ¾¸À¸·Î½á [[1,2],1,2]Ã³·³ ÀúÀåµÇÁö ¾Ê°í []³»ºÎÀÇ '[]'ºÎÈ£¸¦ Á¦°ÅÇÏ¿© ÀúÀåÇÔ
+            order_combinations.extend(list(map(''.join, combinations(order,c)))) # appendëŒ€ì‹  extendsë¥¼ ì”€ìœ¼ë¡œì¨ [[1,2],1,2]ì²˜ëŸ¼ ì €ìž¥ë˜ì§€ ì•Šê³  []ë‚´ë¶€ì˜ '[]'ë¶€í˜¸ë¥¼ ì œê±°í•˜ì—¬ ì €ìž¥í•¨
 
-        for order_combination in order_combinations: #Á¶ÇÕÀ» ¼øÂ÷Å½»öÇÏ¸é¼­ ÇØ´ç Á¶ÇÕÀÌ µñ¼Å³Ê¸®¿¡ ÀÖÀ¸¸é 1À» Ãß°¡ÇÏ°í ¾Æ´Ï¸é µñ¼Å³Ê¸®¿¡ Ãß°¡
+        for order_combination in order_combinations: #ì¡°í•©ì„ ìˆœì°¨íƒìƒ‰í•˜ë©´ì„œ í•´ë‹¹ ì¡°í•©ì´ ë”•ì…”ë„ˆë¦¬ì— ìžˆìœ¼ë©´ 1ì„ ì¶”ê°€í•˜ê³  ì•„ë‹ˆë©´ ë”•ì…”ë„ˆë¦¬ì— ì¶”ê°€
             if order_combination in order_dict:
                 order_dict[order_combination]+=1
             else:
                 order_dict[order_combination]=1
-        answer.append(k for k,v in order_dict.items if max(order_dict.values()) == v)
-    print(answer)  
-    return answer
+        for order in order_dict:
+           if order_dict[order] == max([order_dict[order] for order in order_dict]):
+               if order_dict[order]>1:
+                   answer.append(order)
+    return sorted(answer)
 
 orders = ["ABCFG", "AC", "CDE", "ACDE", "BCFG", "ACDEH"]
 course = [2,3,4]
 solution(orders,course)
-
-'''
-https://velog.io/@jwisgenius/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4-LV2-%EB%A9%94%EB%89%B4-%EB%A6%AC%EB%89%B4%EC%96%BC
-'''
