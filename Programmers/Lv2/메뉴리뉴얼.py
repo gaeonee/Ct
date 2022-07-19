@@ -18,6 +18,8 @@ def solution(orders, course):
            if order_dict[order] == max([order_dict[order] for order in order_dict]):
                if order_dict[order]>1:
                    answer.append(order)
+                   
+
     return sorted(answer)
 
 orders = ["ABCFG", "AC", "CDE", "ACDE", "BCFG", "ACDEH"]
