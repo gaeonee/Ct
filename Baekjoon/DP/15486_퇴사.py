@@ -1,16 +1,19 @@
-def solution(t,p,n):
-    answer = 0
-    profit = 0
-    visit = [True for i in range(n)]
-    while False in visit:
-        for day in range(n):
-            if visit[day]== True:
-                continue
-            else:
-                if day + t[day]-1 >= n:
-                    break
-                profit += p[day]
-                day += t[day]-1
-                
+from sys import stdin
 
-    return answer
+n = int(stdin.readline())
+t,p=[],[]
+dp = [0 for _ in range(n+1)]
+
+for _ in range(n):
+    ti,pi = map(int, stdin.readline().split())
+    t.append(ti)
+    p.append(pi)
+
+m=0
+for i in range(n):
+    m=max(m, dp[i])
+    if i+t[i]>n:
+        continue
+    dp[i+t[i]]=max(m+p[i],dp[i+t[i]])
+
+print(max(dp))
