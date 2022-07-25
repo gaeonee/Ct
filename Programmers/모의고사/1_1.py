@@ -10,4 +10,4 @@ def solution(X, Y):
         return "-1"
     answer = int("".join(sorted(equal, reverse = True)))
     return str(answer)
-#È¿À²¼º°¨Á¡-73.7
+#È¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½-73.7
