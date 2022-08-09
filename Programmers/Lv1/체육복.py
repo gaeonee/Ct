@@ -1,10 +1,10 @@
 def solution(n, lost, reserve):
-    # 1. SetÀ» ¸¸µç´Ù
+    # 1. Setï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½
     reserve_only = list(set(reserve) - set(lost))
     lost_only = list(set(lost) - set(reserve))
     reserve_only.sort();
     
-    # 2. ¿©ºÐÀ» ±âÁØÀ¸·Î ¾ÕµÚ¸¦ È®ÀÎÇÏ¿© Ã¼À°º¹À» ºô·ÁÁØ´Ù.
+    # 2. ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ÕµÚ¸ï¿½ È®ï¿½ï¿½ï¿½Ï¿ï¿½ Ã¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ø´ï¿½.
     for reserve in reserve_only:
         front = reserve - 1
         back = reserve + 1
@@ -13,7 +13,7 @@ def solution(n, lost, reserve):
         elif back in lost_only:
             lost_only.remove(back)
 
-    #3. ÃÖ´ëÇÑ ³ª´²ÁØ µÚ¿¡ lost¿¡ ³²¾ÆÀÖ´Â ÇÐ»ýµéÀº Ã¼À°º¹ÀÌ ¾ø´Â ÇÐ»ýµéÀÌ´Ù.
+    #3. ï¿½Ö´ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ú¿ï¿½ lostï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ö´ï¿½ ï¿½Ð»ï¿½ï¿½ï¿½ï¿½ï¿½ Ã¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ð»ï¿½ï¿½ï¿½ï¿½Ì´ï¿½.
     return n - len(lost_only)
 
 print(solution(5,[2,4],[1,3,5]))
