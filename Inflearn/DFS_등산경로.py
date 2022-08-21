@@ -14,7 +14,7 @@ def dfs(x, y):
 
 n = int(input())
 n_list = []
-visited = [[0]*n for _ in range(n)] #¹æ¹®È®ÀÎ
+visited = [[0]*n for _ in range(n)] #ï¿½æ¹®È®ï¿½ï¿½
 dx = [-1, 1, 0, 0]
 dy = [0, 0, -1, 1]
 min_value = 1000000000
