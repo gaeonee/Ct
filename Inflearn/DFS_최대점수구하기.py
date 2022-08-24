@@ -11,8 +11,8 @@ def dfs(L, S, T):
 
 
 n, m = map(int,input().split())
-pv = list() #Á¡¼ö¸®½ºÆ®
-pt = list() #½Ã°£¸®½ºÆ®
+pv = list() #ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®
+pt = list() #ï¿½Ã°ï¿½ï¿½ï¿½ï¿½ï¿½Æ®
 for i in range(n):
     a, b = map(int, input().split())
     pv.append(a)
