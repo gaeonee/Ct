@@ -10,8 +10,8 @@ def dfs(day, money):
 
 
 n = int(input())
-ct = list() #Á¡¼ö¸®½ºÆ®
-cp = list() #½Ã°£¸®½ºÆ®
+ct = list() #ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®
+cp = list() #ï¿½Ã°ï¿½ï¿½ï¿½ï¿½ï¿½Æ®
 for i in range(n):
     a, b = map(int, input().split())
     ct.append(a)
