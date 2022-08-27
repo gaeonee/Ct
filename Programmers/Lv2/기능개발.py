@@ -1,18 +1,18 @@
 import math
 def solution(progresses, speeds):
     temp = list(map(lambda x:100-x,progresses)) 
-    remainingDay = list(map(lambda x:(math.ceil(temp[x]/speeds[x])),range(len(progresses)))) #(100-progresses)//speeds¸¦ ÇÏ°í ¸òÀ» ¿Ã¸²ÇÔ
-    #remainingDay¿¡ ³²ÀºÀÏ¼ö¸¦ °è»êÇØ ÃÊ±âÈ­ÇÔ
+    remainingDay = list(map(lambda x:(math.ceil(temp[x]/speeds[x])),range(len(progresses)))) #(100-progresses)//speedsï¿½ï¿½ ï¿½Ï°ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ã¸ï¿½ï¿½ï¿½
+    #remainingDayï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï¼ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ê±ï¿½È­ï¿½ï¿½
     cnt=0
     answer=[]
     first=remainingDay[0]
 
     while remainingDay: 
-        #³²ÀºÀÏ¼ö¿¡ ¸Â°Ô ¹èÆ÷(°ªÁ¦°Å)¸¦ÇÏ°í remainingDay¸®½ºÆ®°¡ ¸ðµÎ Á¦°ÅµÉ¶§±îÁö ¹Ýº¹
-        if first>=remainingDay[0]: #Ã¹°ªº¸´Ù ´õÅ«°ªÀÌ³ª¿Ã¶§±îÁö °ªÀ»Á¦°ÅÇÏ°í cnt+1
+        #ï¿½ï¿½ï¿½ï¿½ï¿½Ï¼ï¿½ï¿½ï¿½ ï¿½Â°ï¿½ ï¿½ï¿½ï¿½ï¿½(ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½)ï¿½ï¿½ï¿½Ï°ï¿½ remainingDayï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ÅµÉ¶ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ýºï¿½
+        if first>=remainingDay[0]: #Ã¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Å«ï¿½ï¿½ï¿½Ì³ï¿½ï¿½Ã¶ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï°ï¿½ cnt+1
             del remainingDay[0]
             cnt+=1
-        else: #Ã¹°ªº¸´Ù ´õÅ«°ªÀÌ³ª¿À¸é Ã¹°ªÀ» Å«°ªÀ¸·Îº¯°æ, answer¸®½ºÆ®¿¡cntÃß°¡ÈÄ cnt¸¦0À¸·Îº¯°æ
+        else: #Ã¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Å«ï¿½ï¿½ï¿½Ì³ï¿½ï¿½ï¿½ï¿½ï¿½ Ã¹ï¿½ï¿½ï¿½ï¿½ Å«ï¿½ï¿½ï¿½ï¿½ï¿½Îºï¿½ï¿½ï¿½, answerï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½cntï¿½ß°ï¿½ï¿½ï¿½ cntï¿½ï¿½0ï¿½ï¿½ï¿½Îºï¿½ï¿½ï¿½
             answer.append(cnt)
             first=remainingDay[0]
             cnt=0
