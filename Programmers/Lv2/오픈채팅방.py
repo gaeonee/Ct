@@ -10,8 +10,8 @@ def solution(record):
 
     for j in range(size):
         if record_split[j][0]=="Enter":
-            answer.append(dic[record_split[j][1]]+"´ÔÀÌ µé¾î¿Ô½À´Ï´Ù.")
+            answer.append(dic[record_split[j][1]]+"ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ô½ï¿½ï¿½Ï´ï¿½.")
         elif record_split[j][0]=="Leave":
-            answer.append(dic[record_split[j][1]]+"´ÔÀÌ ³ª°¬½À´Ï´Ù.")
+            answer.append(dic[record_split[j][1]]+"ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.")
 
     return answer
