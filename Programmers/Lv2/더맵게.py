@@ -2,13 +2,13 @@ import heapq
 def solution(scoville,k):
     heapq.heapify(scoville)
     answer=0
-    while scoville[0]<k: #Æ®¸® ·çÆ®¿¡ À§Ä¡ÇÑ 0ÀÎµ¦½º´Â Ç×»ó °¡ÀåÀÛÀº°ª
-        #scovilleÀÇ °¡Àå ÀÛÀº°ªÀÌ kº¸´Ù Ä¿Áú¶§±îÁö ¹Ýº¹
+    while scoville[0]<k: #Æ®ï¿½ï¿½ ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½Ä¡ï¿½ï¿½ 0ï¿½Îµï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½×»ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+        #scovilleï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ kï¿½ï¿½ï¿½ï¿½ Ä¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ýºï¿½
         if len(scoville)<=1:
             answer=-1
             break
         else:
             heapq.heappush(scoville,(heapq.heappop(scoville)+(heapq.heappop(scoville)*2)))
-            #scoville¸®½ºÆ®¿¡ Á¦ÀÏÀÛÀº µÎ°ªÀ» »©°í ¼¯Àº °ªÀ» Ãß°¡
+            #scovilleï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Î°ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ß°ï¿½
             answer+=1
     return answer
