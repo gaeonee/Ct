@@ -1,6 +1,6 @@
 n=int(input())
 
-# ¼Ò¼ö ÆÇº°
+# ï¿½Ò¼ï¿½ ï¿½Çºï¿½
 def isPrime(a):
     if(a<2):
         return False
@@ -10,7 +10,7 @@ def isPrime(a):
     return True
 
 def dfs(num):
-	# ¸ñÇ¥ ±æÀÌ µµ´Þ ½Ã ¸ØÃã
+	# ï¿½ï¿½Ç¥ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
     if len(str(num))==n:
         print(num)
     else:
